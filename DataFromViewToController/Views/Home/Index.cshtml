@@ -1,0 +1,58 @@
+﻿@model DataFromViewToController.Models.Employee
+@{
+    ViewBag.Title = "Index";
+}
+
+<html>
+<body>    
+    <div>
+        <section>
+            @*pass the data from View to Controller using parameters*@
+            @*PostUsingParameters - HomeController method, Home - controller name*@
+            <h4>Pass data using parameters</h4>
+            @using (Html.BeginForm("PostUsingParameters", "Home")) {
+                <input type="text" name="firstName" /><br />
+                <input type="text" name="lastName" /><br />
+                <br />
+                <input type="submit" value="Click me" />
+            }
+        </section>
+        <section>
+            @*pass the data from View to Controller using request*@
+            @*PostUsingRequest - HomeController method, Home - controller name*@
+            <h4>Pass data using request</h4>
+            @using (Html.BeginForm("PostUsingRequest", "Home")) {
+                <input type="text" name="firstName" /><br />
+                <input type="text" name="lastName" /><br />
+                <br />
+                <input type="submit" value="Click me" />
+            }
+        </section>
+        <section>
+            @*pass the data from View to Controller using request*@
+            @*PostUsingFormCollection - HomeController method, Home - controller name*@
+            <h4>Pass data using form collection</h4>
+            @using (Html.BeginForm("PostUsingFormCollection", "Home")) {
+                <input type="text" name="firstName" /><br />
+                <input type="text" name="lastName" /><br />
+                <br />
+                <input type="submit" value="Click me" />
+            }
+        </section>
+        <section>
+            @*pass the data from View to Controller using binding*@
+            @*PostUsingBinding - HomeController method, Home - controller name*@
+            <h4>Pass data using form collection</h4>
+            @using (Html.BeginForm("PostUsingBinding", "Home")) {
+                @Html.TextBoxFor(x => x.firstName)<br />
+                @Html.TextBoxFor(x => x.lastName)<br />
+                <br />
+                <input type="submit" value="Click me" />
+            }
+        </section>
+    </div>
+</body>
+</html>
+
+
+
